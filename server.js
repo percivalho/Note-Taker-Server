@@ -146,6 +146,56 @@ app.delete('/api/notes/:id', (req, res) => {
   }
 });
 
+// UPDATE request to upate a Note
+app.put('/api/notes/:id', (req, res) => {
+  // Log that a POST request was received
+  cLog(`${req.method} request received to update a note`);
+
+  const id = req.params.id;
+  const { title, text } = req.body;
+
+  // make sure id is found to delete
+  if (id) {
+
+    // Obtain the existing notes:
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        let notes = JSON.parse(data);
+
+        //find the corresponding note:
+        let index = notes.findIndex(item => item.id === id);        
+        // if the object was found in the array, update the note
+        if (index !== -1) {
+          notes[index].title = title;
+          notes[index].text = text
+        }
+
+        fs.writeFile(`./db/db.json`, JSON.stringify(notes, null, 2), (err) =>
+        err
+          ? console.error(err)
+          : cLog(
+              `Note for ${title} with id ${id} has been updated`
+            )
+      );        
+      }
+    })
+
+    const response = {
+      status: 'success',
+      body: id,
+    };
+
+    //console.log(response);
+    res.status(201).json(response);
+  } else {
+    res.status(500).json('Error in deleting note');
+  }
+});
+
+
+
 
 app.listen(PORT, () =>
   //console.log(`App listening at http://localhost:${PORT} 🚀`)
