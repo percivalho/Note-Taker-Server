@@ -21,14 +21,33 @@ app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-// GET request for reviews
-app.get('/api/reviews', (req, res) => {
-  // Send a message to the client
-  res.json(`${req.method} request received to get reviews`);
 
+// API!
+// GET request for reviews
+app.get('/api/notes', (req, res) => {
+  // Send a message to the client
+  //res.json(`${req.method} request received to get reviews`);
   // Log our request to the terminal
   console.info(`${req.method} request received to get reviews`);
+
+  // Obtain the existing reviews:
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      let notes = JSON.parse(data);
+
+      console.log(notes);
+
+      const response = notes;
+
+      console.log(response);
+      res.status(201).json(response);
+    } 
+  });
+
 });
+
 
 // POST request to add a review
 app.post('/api/reviews', (req, res) => {
@@ -45,21 +64,42 @@ app.post('/api/reviews', (req, res) => {
       product,
       review,
       username,
-      upvotes: Math.floor(Math.random() * 100),
       review_id: uuid(),
     };
 
+
     // Convert the data to a string so we can save it
-    const reviewString = JSON.stringify(newReview);
+    //const reviewString = JSON.stringify(newReview);
+
+    // Obtain the existing reviews:
+    fs.readFile('./db/reviews.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        let reviews = JSON.parse(data);
+
+        console.log(reviews);
+
+        reviews.push(newReview); 
+
+        fs.writeFile(`./db/reviews.json`, JSON.stringify(reviews), (err) =>
+        err
+          ? console.error(err)
+          : console.log(
+              `Review for ${newReview.product} has been added to JSON file`
+            )
+      );        
+      }
+    })
 
     // Write the string to a file
-    fs.writeFile(`./db/${newReview.product}.json`, reviewString, (err) =>
+    /*fs.writeFile(`./db/reviews.json`, reviewString, (err) =>
       err
         ? console.error(err)
         : console.log(
             `Review for ${newReview.product} has been written to JSON file`
           )
-    );
+    );*/
 
     const response = {
       status: 'success',
