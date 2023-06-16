@@ -1,6 +1,14 @@
 [
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
+  {
+    "title": "Test Title",
+    "text": "Test text"
+  },
+  {
+    "title": "Go to Drink",
+    "text": "drink at the pub at 6pm"
+  },
+  {
+    "title": "Dinner",
+    "text": "dinner at Harborne Kitchen"
+  }
 ]
