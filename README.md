@@ -50,50 +50,61 @@ This application is built using the following technologies:
 
 ## Usage
 
-The user should clone the repository and run 'npm i' to install all dependencies.  
+The user should clone the repository and run 'npm i express' to install express.js.  
+
+The server should be sarted successfully with message:
+![server](examples/server.png)
 
 ## Features
 
-The application is capable of generating a SVG file for logo design.  It takes user input from the command line and dynamically create the logo based on the questions. It supports a number of shapes including rectangle, square, triangle, circle, ellipse, line, star and the color input can be of color words or hex color code.
-there are a number of effects added to the SVG generation including blink, and gradient on the logo shape
-Also, for logo text, the effect are skew and rotate, to make the logo generation more multifaceted.
+The application is capable of the full functionality of Note Taker.
+It has implemented CRUD operation:
+1. C (Create): 
+User can create a new note with title and detail text and then click the save button to store in db.json.
 
-Examples of logo.svg
-1.  Basic logo.svg
+Editing the New note:
+![Editing in Create](examples/Cedit.png)
 
-![Basic Logo](examples/Triangle.svg)
+Saving the New Note:
+![Saving in Create](examples/Csave.png)
 
-2. Blinking logo.svg
 
-![Basic Logo](examples/Blink.svg)
+2. R (Read):
+On loading up, the notes saved in db.json can be read in and loaded to the left side of the page notes.html.  also, on every create, delete and update, all the notes in db.json will be loaded once again for having updated effect.
 
-3. Gradient Logo.svg
+Loading Default notes in db.json:
+![Default Notes](examples/Rdefault.png)
 
-![Basic Logo](examples/Gradient.svg)
+3. U (Update):
+On clicking a note on the left pane, the details data on the particular note will be shown on the detail panel. user can edit the title and text and save to update the note to db.json with updated title/text by using the id.
+
+Editing the note to update:
+![Updating Note - Edit](examples/Uedit.png)
+
+Saving the update note
+![update note saving](examples/Usave.png)
+
+4. D (Delete):
+On clicking the bin button on the note, the note will be deleted and it will also reflected in db.json.
+
+Before Delete
+![Notes before delete](examples/Dbefore.png)
+
+After Delete
+![Notes after delete](examples/Dafter.png)
+
 
 ## Tests
 
 Testing done on:
 
-1. testing on logo text of more than 3 characters
-2. testing on logo text of within 3 characters
-3. testing on logo valid color word
-4. testing on logo invalid color word
-5. testing on logo valid hex code (6 digits)
-6. testing on logo invalid hex code (6 digits).
-7. testing on logo valid hex code (3 digits)
-8. testing on logo invalid hex code (3 digits)
-9. testing on generating Rectangle.
-10. testing on generating Square.
-11. testing on generating Circle.
-12. testing on generating Ellipse.
-13. testing on generating Triangle.
-14. testing on generating Star.
-15. testing on generating Line.
-16. testing on generating Logo matched to questions asked.
-17. testing on text effect like skew or rotate
-18. testing on shape effect like blink or gradient.
-
+1. testing on successful loading up in server.js with message "App listening at http://localhost:3001 🚀"
+2. testing on page index.html loading up successfully
+3. testing on page notes.html loading up successfully with default notes loaded.
+4. testing on New Note saved and written to db.json successfully.
+5. testing on checking the id field also found in db.json for the new Note.
+6. testing on delete existing Note with db.json updated.
+7. testing on updating an existing Note with db.json updated.
 
 
 ## Resources
