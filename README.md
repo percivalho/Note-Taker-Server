@@ -62,7 +62,7 @@ It has implemented CRUD operation:
 1. C (Create): 
 User can create a new note with title and detail text and then click the save button to store in db.json.
 
-Editing the New note:
+Editing the New note: "Go Drink" note
 ![Editing in Create](examples/Cedit.png)
 
 Saving the New Note:
@@ -87,10 +87,10 @@ Saving the update note
 4. D (Delete):
 On clicking the bin button on the note, the note will be deleted and it will also reflected in db.json.
 
-Before Delete
+Before Delete, it is goting to delete "Go Drink" Note
 ![Notes before delete](examples/Dbefore.png)
 
-After Delete
+After Delete, "go Drink" note deleted
 ![Notes after delete](examples/Dafter.png)
 
 
