@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-// Import custom middleware, "cLog"
+// Import custom middleware, "clog"
 app.use(clog);
 
 app.use(express.json());

@@ -79,7 +79,7 @@ User can create a new note with title and detail text and then click the save bu
 Editing the New note: "Late Dinner" note
 ![Editing in Create](examples/Cedit.png)
 
-Saving the New Note:
+Saving the New Note: after save, note "Late Dinner" appeared in the left hand panel.
 ![Saving in Create](examples/Csave.png)
 
 
@@ -95,7 +95,7 @@ On clicking a note on the left pane, the details data on the particular note wil
 Editing the note to update:
 ![Updating Note - Edit](examples/Uedit.png)
 
-Saving the update note
+Saving the update note (the original note was "Dinner at 6:30pm" and upon saving, it changed to "Dinner at 7:00pm")
 ![update note saving](examples/Usave.png)
 
 4. D (Delete):
@@ -125,7 +125,7 @@ Testing done on:
 4. testing on New Note saved and written to db.json successfully.
 5. testing on checking the id field also found in db.json for the new Note.
 6. testing on delete existing Note with db.json updated.
-7. testing on updating an existing Note with db.json updated.
+7. testing on updating an existing Note with db.json updated. (index.js needed to be amended in order to support update operation)
 8. testing on route that can't be routed and 404.html displayed out.
 
 
