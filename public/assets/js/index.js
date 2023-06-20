@@ -67,7 +67,7 @@ const renderActiveNote = () => {
     //noteTitle.setAttribute('readonly', true);
     //noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
+    noteText.value = activeNote.text;  
   } else {
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
@@ -83,6 +83,8 @@ const handleNoteSave = () => {
       text: noteText.value,
     };
     updateNote(note, activeNote.id).then(() => {
+      activeNote.title = noteTitle.value;
+      activeNote.text = noteText.value;
       getAndRenderNotes();
       renderActiveNote();
     });   
@@ -140,7 +142,6 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  console.log(jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
