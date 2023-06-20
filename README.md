@@ -32,12 +32,18 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Installation
   
-to install:
+to install for running in localhost:
 1. Express.js. It is a flexible, minimalist web application framework for Node.js, used to build web applications, APIs, and handle HTTP requests in a streamlined and simplified way.
 
   ```md
   npm i express
   ```
+
+for heroku application, no need installation, just go to:
+
+https://note-taker-server-e16f72bce28f.herokuapp.com
+
+
 
 ## Technologies Used
 
@@ -54,8 +60,14 @@ This application is built using the following technologies:
 
 The user should clone the repository and run 'npm i express' to install express.js.  
 
+for localhost:
 The server should be sarted successfully with message:
 ![server](examples/server.png)
+
+for heroku application:
+![herokuserver](examples/herokuserver.png)
+
+
 
 ## Features
 
@@ -96,7 +108,7 @@ After Delete, "go Drink" note deleted
 ![Notes after delete](examples/Dafter.png)
 
 Besides those CRUD features, the app has more to give:
-1.  it will map to 404.html when no route can be found
+1.  it will map to 404.html when no route can be found.
 2.  implementing cLog function so that on there is time display when logging to console.
 3.  middleware to log all the GET/POST/PUT/DELETE operations.
 
@@ -113,12 +125,14 @@ Testing done on:
 5. testing on checking the id field also found in db.json for the new Note.
 6. testing on delete existing Note with db.json updated.
 7. testing on updating an existing Note with db.json updated.
+8. testing on route that can't be routed and 404.html displayed out.
 
 
 ## Resources
 
 Link to Heroku:
 
+https://note-taker-server-e16f72bce28f.herokuapp.com
 
 
 Link to GitHub repo:
@@ -134,6 +148,8 @@ https://github.com/percivalho/Note-Taker-Server.git
 
 
 ## Credits
+Bootcamp Week11 Mini-Project: 
+For a number of helpers files like fsUtils.js, uuid.js, middleware/clog.js.
 
 
 ## Credits and Copyright 

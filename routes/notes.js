@@ -1,14 +1,13 @@
 const notes = require('express').Router();
 const fs = require('fs');
-const uuid = require('../helpers/uuid.js');
+const uuid = require('../helpers/uuid');
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
-const cLog = require('../helpers/cLog.js'); /*for logging time*/
+const cLog = require('../helpers/cLog'); /*for logging time*/
 
 // API!
 // GET Route for retrieving all the notes
 notes.get('/', (req, res) => {
   // Log our request to the terminal
-  //console.info(`${req.method} request received to get reviews`);
   cLog(`${req.method} request received to get notes`);
 
   // Obtain the existing notes:
@@ -18,10 +17,8 @@ notes.get('/', (req, res) => {
     } else {
       let notes = JSON.parse(data);
 
-
       const response = notes;
 
-      //console.log(response);
       res.status(201).json(response);
     } 
   });
@@ -32,7 +29,6 @@ notes.get('/', (req, res) => {
 // POST request to add a new Note
 notes.post('/', (req, res) => {
   // Log that a POST request was received
-  //console.info(`${req.method} request received to add a note`);
   cLog(`${req.method} request received to add a note`);
 
   // Destructuring assignment for the items in req.body
@@ -54,8 +50,6 @@ notes.post('/', (req, res) => {
       } else {
         let notes = JSON.parse(data);
 
-        //console.log(notes);
-
         notes.push(newNote); 
 
         fs.writeFile(`./db/db.json`, JSON.stringify(notes, null, 2), (err) =>
@@ -73,7 +67,6 @@ notes.post('/', (req, res) => {
       body: newNote,
     };
 
-    //console.log(response);
     res.status(201).json(response);
   } else {
     res.status(500).json('Error in posting note');
@@ -98,7 +91,6 @@ notes.delete('/:id', (req, res) => {
       } else {
         let notes = JSON.parse(data);
 
-        //console.log(notes);
         var deleteNoteTitle = ""; 
         //find the corresponding note:
         let index = notes.findIndex(item => item.id === id);        
@@ -171,7 +163,6 @@ notes.put('/:id', (req, res) => {
       body: id,
     };
 
-    //console.log(response);
     res.status(201).json(response);
   } else {
     res.status(500).json('Error in deleting note');
