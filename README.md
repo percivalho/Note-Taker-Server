@@ -125,7 +125,7 @@ Testing done on:
 4. testing on New Note saved and written to db.json successfully.
 5. testing on checking the id field also found in db.json for the new Note.
 6. testing on delete existing Note with db.json updated.
-7. testing on updating an existing Note with db.json updated. (index.js needed to be amended in order to support update operation)
+7. testing on updating an existing Note with db.json updated. (index.js (frontend) needed to be amended in order to support update operation)
 8. testing on route that can't be routed and 404.html displayed out.
 
 
