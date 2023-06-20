@@ -43,6 +43,8 @@ to install:
 
 This application is built using the following technologies:
 
+- **HTML5**: Markup language for structuring content.
+- **CSS**: Stylesheet language for styling HTML content.
 - **JavaScript**: Programming language for adding interactivity and dynamic content.
 - **NodeJS**: an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.
 - **Express**:  flexible, minimalist web application framework for Node.js, used to build web applications, APIs, and handle HTTP requests in a streamlined and simplified way.
@@ -92,6 +94,12 @@ Before Delete, it is goting to delete "Go Drink" Note
 
 After Delete, "go Drink" note deleted
 ![Notes after delete](examples/Dafter.png)
+
+Besides those CRUD features, the app has more to give:
+1.  it will map to 404.html when no route can be found
+2.  implementing cLog function so that on there is time display when logging to console.
+3.  middleware to log all the GET/POST/PUT/DELETE operations.
+
 
 
 ## Tests
