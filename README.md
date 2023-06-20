@@ -76,7 +76,7 @@ It has implemented CRUD operation:
 1. C (Create): 
 User can create a new note with title and detail text and then click the save button to store in db.json.
 
-Editing the New note: "Go Drink" note
+Editing the New note: "Late Dinner" note
 ![Editing in Create](examples/Cedit.png)
 
 Saving the New Note:
@@ -101,14 +101,15 @@ Saving the update note
 4. D (Delete):
 On clicking the bin button on the note, the note will be deleted and it will also reflected in db.json.
 
-Before Delete, it is goting to delete "Go Drink" Note
+Before Delete, it is goting to delete "New Notes10" Note 
 ![Notes before delete](examples/Dbefore.png)
 
-After Delete, "go Drink" note deleted
+After Delete, "New Notes10 " note deleted
 ![Notes after delete](examples/Dafter.png)
 
 Besides those CRUD features, the app has more to give:
-1.  it will map to 404.html when no route can be found.
+1.  it will map to 404.html with the theme matched to existing design when no route can be found.
+![404](examples/404.png)
 2.  implementing cLog function so that on there is time display when logging to console.
 3.  middleware to log all the GET/POST/PUT/DELETE operations.
 
